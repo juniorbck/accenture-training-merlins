@@ -24,7 +24,7 @@ const template = (WrappedComponent) => {
             triggerMobifyPageView(route.routeName)
 
             dispatch(onRouteChanged(url, WrappedComponent))
-
+            console.log(`HERE HERE: dispatch Route Change runned`)
             if (!route.suppressFetch) {
                 dispatch(fetchPage(url, WrappedComponent, route.routeName, route.fetchUrl))
             }
