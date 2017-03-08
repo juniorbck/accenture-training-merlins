@@ -9,7 +9,7 @@ import {getTitle, getText} from './selectors'
 const containerClass = 't-privacy-cookie'
 const titleClass = `${containerClass}__title`
 
-title = <SkeletonText type="h3" className="u-margin-bottom-sm" />
+//title = <SkeletonText type="h3" className="u-margin-bottom-sm" />
 
 const PrivacyCookie = ({title, text}) => (
     <div className={containerClass}>
