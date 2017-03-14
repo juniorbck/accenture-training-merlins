@@ -5,7 +5,7 @@ import {Provider} from 'react-redux'
 
 // Containers
 import App from './containers/app/container'
-import {Cart, CheckoutConfirmation, CheckoutPayment, CheckoutShipping, Home, Login, ProductList, ProductDetails} from './containers/templates'
+import {Cart, CheckoutConfirmation, CheckoutPayment, CheckoutShipping, Home, Login, ProductList, ProductDetails, StartersKit} from './containers/templates'
 import CheckoutHeader from './containers/checkout-header/container'
 import CheckoutFooter from './containers/checkout-footer/container'
 
@@ -55,6 +55,7 @@ const Router = ({store}) => (
                 */}
                 <Route component={CheckoutPayment} path="checkout/payment/" fetchUrl="/checkout/#payment" routeName="checkout-payment" Header={CheckoutHeader} Footer={CheckoutFooter} />
                 <Route component={CheckoutConfirmation} path="checkout/onepage/success/" routeName="checkout-confirmation" Header={CheckoutHeader} Footer={CheckoutFooter} />
+                <Route component={StartersKit} path="starters-kit" routeName="startersKit" />
             </Route>
         </SDKRouter>
     </Provider>

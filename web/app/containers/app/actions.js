@@ -16,6 +16,7 @@ import Home from '../home/container'
 import Login from '../login/container'
 import ProductDetails from '../product-details/container'
 import ProductList from '../product-list/container'
+import StartersKit from '../starters-kit/container'
 import * as checkoutActions from '../../store/checkout/actions'
 import * as checkoutConfirmationActions from '../checkout-confirmation/actions'
 import * as checkoutShippingUIActions from '../checkout-shipping/actions'
@@ -28,6 +29,7 @@ import * as footerActions from '../footer/actions'
 import * as navigationActions from '../navigation/actions'
 import * as productsActions from '../../store/products/actions'
 import * as categoriesActions from '../../store/categories/actions'
+import * as startersKitActions from '../starters-kit/actions'
 
 import {OFFLINE_ASSET_URL} from './constants'
 import {closeModal} from '../../store/modals/actions'
@@ -140,6 +142,10 @@ export const fetchPage = (url, pageComponent, routeName, fetchUrl) => {
                     dispatch(checkoutConfirmationActions.process(receivedAction))
                     // Resets the cart count to 0
                     dispatch(cartActions.getCart())
+                } else if (pageComponent === StartersKit) {
+                    dispatch(categoriesActions.process(receivedAction))
+                    dispatch(productsActions.processProductList(receivedAction))
+                    dispatch(startersKitActions.process(receivedAction))
                 }
                 dispatch(footerActions.process(receivedAction))
                 dispatch(navigationActions.process(receivedAction))
